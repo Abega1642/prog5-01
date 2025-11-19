@@ -1,4 +1,4 @@
-package dev.razafindratelo;
+package dev.razafindratelo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

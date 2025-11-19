@@ -1,4 +1,4 @@
-package dev.razafindratelo;
+package dev.razafindratelo.model;
 
 import static org.junit.jupiter.api.Assertions.*;
 
