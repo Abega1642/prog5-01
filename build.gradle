@@ -1,5 +1,8 @@
+import com.github.spotbugs.snom.SpotBugsTask
+
 plugins {
     id 'java'
+    id "com.github.spotbugs" version "6.0.18"
 }
 
 group = 'dev.razafindratelo'
@@ -13,8 +16,23 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    compileOnly 'org.projectlombok:lombok:1.18.42'
+    annotationProcessor 'org.projectlombok:lombok:1.18.42'
 }
 
 test {
     useJUnitPlatform()
+}
+
+spotbugs {
+    effort = 'max'
+    reportLevel = 'low'
+}
+
+tasks.withType(SpotBugsTask).configureEach {
+    reports {
+        html.required = true
+        xml.required = false
+    }
 }
